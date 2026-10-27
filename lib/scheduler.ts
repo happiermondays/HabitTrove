@@ -1,5 +1,6 @@
 import cron from 'node-cron';
 import { runBackup } from './backup';
+import { checkHabitReminders } from './reminders';
 
 let isSchedulerInitialized = false;
 
@@ -28,13 +29,23 @@ export function initializeScheduler() {
     // timezone: "Your/Timezone"
   });
 
-  console.log('Scheduler initialized. Daily backup scheduled for 2:00 AM server time.');
+  // Check every minute for habit reminders that are due
+  const reminderJob = cron.schedule('* * * * *', async () => {
+    try {
+      await checkHabitReminders();
+    } catch (err) {
+      console.error(`[${new Date().toISOString()}] Habit reminder check failed:`, err);
+    }
+  });
+
+  console.log('Scheduler initialized. Daily backup scheduled for 2:00 AM server time. Habit reminders checked every minute.');
   isSchedulerInitialized = true;
 
   // Graceful shutdown handling (optional but recommended)
   process.on('SIGTERM', () => {
     console.log('SIGTERM signal received. Stopping scheduler...');
     backupJob.stop();
+    reminderJob.stop();
     // Add cleanup for other jobs if needed
     process.exit(0);
   });

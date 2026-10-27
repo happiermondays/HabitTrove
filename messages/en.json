@@ -96,7 +96,10 @@
     "shareLabel": "Share",
     "saveChangesButton": "Save Changes",
     "addTaskButton": "Add Task",
-    "addHabitButton": "Add Habit"
+    "addHabitButton": "Add Habit",
+    "reminderLabel": "Reminder",
+    "reminderDescription": "Get a notification at this time if the habit isn't done yet",
+    "clearReminder": "Clear reminder"
   },
   "ConfirmDialog": {
     "confirmButton": "Confirm",
@@ -438,12 +441,31 @@
     "invalidAmountDescription": "Please enter a valid positive number",
     "successTitle": "Success",
     "transactionNotFoundDescription": "Transaction not found",
-    "maxAmountExceededDescription": "The amount cannot exceed {max}.",
-    "transactionNotFoundDescription": "Transaction not found",
     "maxAmountExceededDescription": "The amount cannot exceed {max}."
   },
   "Warning": {
     "areYouSure": "Are you sure?",
     "cancel": "Cancel"
+  },
+  "NotificationSettings": {
+    "title": "Reminders",
+    "deviceLabel": "Notifications on this device",
+    "unsupportedDescription": "This browser doesn't support push notifications. On iPhone, add HabitTrove to your Home Screen first.",
+    "deniedDescription": "Notifications are blocked. Allow them in your browser's site settings.",
+    "subscribedDescription": "This device will receive habit reminders.",
+    "unsubscribedDescription": "Turn on to receive habit reminders on this device.",
+    "enableButton": "Enable",
+    "disableButton": "Disable",
+    "testButton": "Send test",
+    "enabledTitle": "Notifications enabled",
+    "enabledDescription": "Set a reminder time on any habit to get notified.",
+    "errorTitle": "Error",
+    "errorDescription": "Couldn't enable notifications.",
+    "testTitle": "HabitTrove",
+    "testBody": "Notifications are working!",
+    "testFailedDescription": "Couldn't send a test notification."
+  },
+  "Reminders": {
+    "notificationBody": "{name} isn't done yet today"
   }
 }

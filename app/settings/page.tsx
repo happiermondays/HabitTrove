@@ -10,6 +10,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { DynamicTimeNoSSR } from '@/components/DynamicTimeNoSSR';
+import NotificationSettings from '@/components/NotificationSettings';
 import { useAtom } from 'jotai';
 import { useTranslations } from 'next-intl';
 import { settingsAtom, serverSettingsAtom } from '@/lib/atoms';
@@ -239,6 +240,8 @@ export default function SettingsPage() {
 
           </CardContent>
         </Card>
+
+        <NotificationSettings />
 
         {/* Danger Zone Card Removed */}
       </div >

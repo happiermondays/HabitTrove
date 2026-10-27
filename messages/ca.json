@@ -88,7 +88,10 @@
     "shareLabel": "Comparteix",
     "saveChangesButton": "Desa els canvis",
     "addTaskButton": "Afegeix tasca",
-    "addHabitButton": "Afegeix hàbit"
+    "addHabitButton": "Afegeix hàbit",
+    "reminderLabel": "Recordatori",
+    "reminderDescription": "Rep una notificació a aquesta hora si l'hàbit encara no està fet",
+    "clearReminder": "Treu el recordatori"
   },
   "ConfirmDialog": {
     "confirmButton": "Confirma",
@@ -443,5 +446,26 @@
     "clearButton": "Neteja",
     "saveDrawingButton": "Desa el dibuix",
     "cancelButton": "Cancel·la"
+  },
+  "NotificationSettings": {
+    "title": "Recordatoris",
+    "deviceLabel": "Notificacions en aquest dispositiu",
+    "unsupportedDescription": "Aquest navegador no admet notificacions push. A l'iPhone, primer afegeix HabitTrove a la pantalla d'inici.",
+    "deniedDescription": "Les notificacions estan bloquejades. Permet-les a la configuració del lloc del navegador.",
+    "subscribedDescription": "Aquest dispositiu rebrà recordatoris d'hàbits.",
+    "unsubscribedDescription": "Activa-les per rebre recordatoris d'hàbits en aquest dispositiu.",
+    "enableButton": "Activa",
+    "disableButton": "Desactiva",
+    "testButton": "Envia una prova",
+    "enabledTitle": "Notificacions activades",
+    "enabledDescription": "Defineix una hora de recordatori en qualsevol hàbit per rebre avisos.",
+    "errorTitle": "Error",
+    "errorDescription": "No s'han pogut activar les notificacions.",
+    "testTitle": "HabitTrove",
+    "testBody": "Les notificacions funcionen!",
+    "testFailedDescription": "No s'ha pogut enviar la notificació de prova."
+  },
+  "Reminders": {
+    "notificationBody": "{name} encara no està fet avui"
   }
 }

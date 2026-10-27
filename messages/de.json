@@ -88,7 +88,10 @@
     "shareLabel": "Teilen",
     "saveChangesButton": "Änderungen speichern",
     "addTaskButton": "Aufgabe hinzufügen",
-    "addHabitButton": "Gewohnheit hinzufügen"
+    "addHabitButton": "Gewohnheit hinzufügen",
+    "reminderLabel": "Erinnerung",
+    "reminderDescription": "Zu dieser Uhrzeit benachrichtigen, wenn die Gewohnheit noch nicht erledigt ist",
+    "clearReminder": "Erinnerung entfernen"
   },
   "ConfirmDialog": {
     "confirmButton": "Bestätigen",
@@ -434,8 +437,6 @@
     "invalidAmountDescription": "Bitte geben Sie eine gültige positive Zahl ein",
     "successTitle": "Erfolg",
     "transactionNotFoundDescription": "Transaktion nicht gefunden",
-    "maxAmountExceededDescription": "Der Betrag darf {max} nicht überschreiten.",
-    "transactionNotFoundDescription": "Transaktion nicht gefunden",
     "maxAmountExceededDescription": "Der Betrag darf {max} nicht überschreiten."
   },
   "DrawingModal": {
@@ -445,5 +446,26 @@
     "clearButton": "Löschen",
     "saveDrawingButton": "Zeichnung speichern",
     "cancelButton": "Abbrechen"
+  },
+  "NotificationSettings": {
+    "title": "Erinnerungen",
+    "deviceLabel": "Benachrichtigungen auf diesem Gerät",
+    "unsupportedDescription": "Dieser Browser unterstützt keine Push-Benachrichtigungen. Auf dem iPhone füge HabitTrove zuerst zum Home-Bildschirm hinzu.",
+    "deniedDescription": "Benachrichtigungen sind blockiert. Erlaube sie in den Website-Einstellungen deines Browsers.",
+    "subscribedDescription": "Dieses Gerät erhält Gewohnheitserinnerungen.",
+    "unsubscribedDescription": "Aktivieren, um Gewohnheitserinnerungen auf diesem Gerät zu erhalten.",
+    "enableButton": "Aktivieren",
+    "disableButton": "Deaktivieren",
+    "testButton": "Test senden",
+    "enabledTitle": "Benachrichtigungen aktiviert",
+    "enabledDescription": "Lege bei einer Gewohnheit eine Erinnerungszeit fest, um benachrichtigt zu werden.",
+    "errorTitle": "Fehler",
+    "errorDescription": "Benachrichtigungen konnten nicht aktiviert werden.",
+    "testTitle": "HabitTrove",
+    "testBody": "Benachrichtigungen funktionieren!",
+    "testFailedDescription": "Testbenachrichtigung konnte nicht gesendet werden."
+  },
+  "Reminders": {
+    "notificationBody": "{name} ist heute noch nicht erledigt"
   }
 }

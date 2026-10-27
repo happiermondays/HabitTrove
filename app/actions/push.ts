@@ -1,49 +1,45 @@
 'use server'
 
-import webpush from 'web-push'
+import { getCurrentUser } from '@/lib/server-helpers'
+import { getVapidKeys, loadPushSubscriptions, savePushSubscriptions, sendPushToUsers } from '@/lib/push'
 
-webpush.setVapidDetails(
-  'mailto:mydohsimpson@gmail.com',
-  process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY!,
-  process.env.VAPID_PRIVATE_KEY!
-)
-
-interface PushSubscriptionWithKeys extends PushSubscription {
-  keys: {
-    p256dh: string
-    auth: string
-  }
+export async function getVapidPublicKey(): Promise<string> {
+  const { publicKey } = await getVapidKeys()
+  return publicKey
 }
 
-let subscription: PushSubscriptionWithKeys | null = null
+export async function subscribeUser(sub: { endpoint: string; keys: { p256dh: string; auth: string } }) {
+  const user = await getCurrentUser()
+  if (!user) return { success: false, error: 'User not authenticated' }
 
-export async function subscribeUser(sub: PushSubscriptionWithKeys) {
-  subscription = sub
+  const data = await loadPushSubscriptions()
+  // One device (endpoint) belongs to whoever subscribed it most recently
+  const subscriptions = data.subscriptions.filter(s => s.endpoint !== sub.endpoint)
+  subscriptions.push({
+    userId: user.id,
+    endpoint: sub.endpoint,
+    keys: { p256dh: sub.keys.p256dh, auth: sub.keys.auth },
+    createdAt: new Date().toISOString(),
+  })
+  await savePushSubscriptions({ subscriptions })
   return { success: true }
 }
 
-export async function unsubscribeUser() {
-  subscription = null
+export async function unsubscribeUser(endpoint: string) {
+  const user = await getCurrentUser()
+  if (!user) return { success: false, error: 'User not authenticated' }
+
+  const data = await loadPushSubscriptions()
+  await savePushSubscriptions({
+    subscriptions: data.subscriptions.filter(s => !(s.endpoint === endpoint && s.userId === user.id))
+  })
   return { success: true }
 }
 
-export async function sendNotification(message: string) {
-  if (!subscription) {
-    throw new Error('No subscription available')
-  }
+export async function sendTestNotification(title: string, body: string) {
+  const user = await getCurrentUser()
+  if (!user) return { success: false, error: 'User not authenticated' }
 
-  try {
-    await webpush.sendNotification(
-      subscription,
-      JSON.stringify({
-        title: 'HabitTrove',
-        body: message,
-        icon: '/icon.png',
-      })
-    )
-    return { success: true }
-  } catch (error) {
-    console.error('Error sending push notification:', error)
-    return { success: false, error: 'Failed to send notification' }
-  }
+  const sent = await sendPushToUsers([user.id], { title, body, url: '/habits', tag: 'test' })
+  return sent > 0 ? { success: true } : { success: false, error: 'No subscribed devices' }
 }

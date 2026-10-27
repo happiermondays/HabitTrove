@@ -88,7 +88,10 @@
     "shareLabel": "Поделиться",
     "saveChangesButton": "Сохранить",
     "addTaskButton": "Добавить задачу",
-    "addHabitButton": "Добавить привычку"
+    "addHabitButton": "Добавить привычку",
+    "reminderLabel": "Напоминание",
+    "reminderDescription": "Получить уведомление в это время, если привычка ещё не выполнена",
+    "clearReminder": "Убрать напоминание"
   },
   "ConfirmDialog": {
     "confirmButton": "Подтвердить",
@@ -434,8 +437,6 @@
     "invalidAmountDescription": "Пожалуйста, введите положительное число",
     "successTitle": "Успех",
     "transactionNotFoundDescription": "Транзакция не найдена",
-    "maxAmountExceededDescription": "Сумма не может превышать {max}.",
-    "transactionNotFoundDescription": "Транзакция не найдена",
     "maxAmountExceededDescription": "Сумма не может превышать {max}."
   },
   "DrawingModal": {
@@ -445,5 +446,26 @@
     "clearButton": "Очистить",
     "saveDrawingButton": "Сохранить рисунок",
     "cancelButton": "Отмена"
+  },
+  "NotificationSettings": {
+    "title": "Напоминания",
+    "deviceLabel": "Уведомления на этом устройстве",
+    "unsupportedDescription": "Этот браузер не поддерживает push-уведомления. На iPhone сначала добавьте HabitTrove на экран «Домой».",
+    "deniedDescription": "Уведомления заблокированы. Разрешите их в настройках сайта в браузере.",
+    "subscribedDescription": "Это устройство будет получать напоминания о привычках.",
+    "unsubscribedDescription": "Включите, чтобы получать напоминания о привычках на этом устройстве.",
+    "enableButton": "Включить",
+    "disableButton": "Отключить",
+    "testButton": "Отправить тест",
+    "enabledTitle": "Уведомления включены",
+    "enabledDescription": "Задайте время напоминания для любой привычки, чтобы получать уведомления.",
+    "errorTitle": "Ошибка",
+    "errorDescription": "Не удалось включить уведомления.",
+    "testTitle": "HabitTrove",
+    "testBody": "Уведомления работают!",
+    "testFailedDescription": "Не удалось отправить тестовое уведомление."
+  },
+  "Reminders": {
+    "notificationBody": "{name} сегодня ещё не выполнено"
   }
 }

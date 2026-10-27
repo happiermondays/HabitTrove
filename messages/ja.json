@@ -88,7 +88,10 @@
     "shareLabel": "共有",
     "saveChangesButton": "変更を保存",
     "addTaskButton": "タスクを追加",
-    "addHabitButton": "習慣を追加"
+    "addHabitButton": "習慣を追加",
+    "reminderLabel": "リマインダー",
+    "reminderDescription": "習慣がまだ完了していない場合、この時刻に通知します",
+    "clearReminder": "リマインダーを解除"
   },
   "ConfirmDialog": {
     "confirmButton": "確認",
@@ -434,8 +437,6 @@
     "invalidAmountDescription": "有効な正の数を入力してください",
     "successTitle": "成功しました",
     "transactionNotFoundDescription": "取引が見つかりません",
-    "maxAmountExceededDescription": "金額は{max}を超えることはできません。",
-    "transactionNotFoundDescription": "取引が見つかりません",
     "maxAmountExceededDescription": "金額は{max}を超えることはできません。"
   },
   "DrawingModal": {
@@ -445,5 +446,26 @@
     "clearButton": "クリア",
     "saveDrawingButton": "描画を保存",
     "cancelButton": "キャンセル"
+  },
+  "NotificationSettings": {
+    "title": "リマインダー",
+    "deviceLabel": "このデバイスの通知",
+    "unsupportedDescription": "このブラウザはプッシュ通知に対応していません。iPhoneでは、先にHabitTroveをホーム画面に追加してください。",
+    "deniedDescription": "通知がブロックされています。ブラウザのサイト設定で許可してください。",
+    "subscribedDescription": "このデバイスで習慣のリマインダーを受け取ります。",
+    "unsubscribedDescription": "オンにすると、このデバイスで習慣のリマインダーを受け取れます。",
+    "enableButton": "オンにする",
+    "disableButton": "オフにする",
+    "testButton": "テスト送信",
+    "enabledTitle": "通知をオンにしました",
+    "enabledDescription": "習慣にリマインダー時刻を設定すると通知が届きます。",
+    "errorTitle": "エラー",
+    "errorDescription": "通知をオンにできませんでした。",
+    "testTitle": "HabitTrove",
+    "testBody": "通知は正常に動作しています！",
+    "testFailedDescription": "テスト通知を送信できませんでした。"
+  },
+  "Reminders": {
+    "notificationBody": "今日はまだ「{name}」が完了していません"
   }
 }

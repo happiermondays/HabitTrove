@@ -88,7 +88,10 @@
     "shareLabel": "Partager",
     "saveChangesButton": "Sauvegarder les modifications",
     "addTaskButton": "Ajouter une tâche",
-    "addHabitButton": "Ajouter une habitude"
+    "addHabitButton": "Ajouter une habitude",
+    "reminderLabel": "Rappel",
+    "reminderDescription": "Recevoir une notification à cette heure si l'habitude n'est pas encore faite",
+    "clearReminder": "Supprimer le rappel"
   },
   "ConfirmDialog": {
     "confirmButton": "Confirmer",
@@ -434,8 +437,6 @@
     "invalidAmountDescription": "Veuillez entrer un nombre positif valide",
     "successTitle": "Succès",
     "transactionNotFoundDescription": "Transaction non trouvée",
-    "maxAmountExceededDescription": "Le montant ne peut pas dépasser {max}.",
-    "transactionNotFoundDescription": "Transaction non trouvée",
     "maxAmountExceededDescription": "Le montant ne peut pas dépasser {max}."
   },
   "DrawingModal": {
@@ -445,5 +446,26 @@
     "clearButton": "Effacer",
     "saveDrawingButton": "Enregistrer le dessin",
     "cancelButton": "Annuler"
+  },
+  "NotificationSettings": {
+    "title": "Rappels",
+    "deviceLabel": "Notifications sur cet appareil",
+    "unsupportedDescription": "Ce navigateur ne prend pas en charge les notifications push. Sur iPhone, ajoutez d'abord HabitTrove à l'écran d'accueil.",
+    "deniedDescription": "Les notifications sont bloquées. Autorisez-les dans les paramètres du site de votre navigateur.",
+    "subscribedDescription": "Cet appareil recevra les rappels d'habitudes.",
+    "unsubscribedDescription": "Activez-les pour recevoir les rappels d'habitudes sur cet appareil.",
+    "enableButton": "Activer",
+    "disableButton": "Désactiver",
+    "testButton": "Envoyer un test",
+    "enabledTitle": "Notifications activées",
+    "enabledDescription": "Définissez une heure de rappel sur une habitude pour être notifié.",
+    "errorTitle": "Erreur",
+    "errorDescription": "Impossible d'activer les notifications.",
+    "testTitle": "HabitTrove",
+    "testBody": "Les notifications fonctionnent !",
+    "testFailedDescription": "Impossible d'envoyer la notification de test."
+  },
+  "Reminders": {
+    "notificationBody": "{name} n'est pas encore fait aujourd'hui"
   }
 }

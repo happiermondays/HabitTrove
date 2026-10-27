@@ -3,12 +3,13 @@ self.addEventListener('push', function (event) {
     const data = event.data.json()
     const options = {
       body: data.body,
-      icon: data.icon || '/icon.png',
-      badge: '/badge.png',
+      icon: data.icon || '/icons/web-app-manifest-192x192.png',
+      badge: '/icons/web-app-manifest-192x192.png',
       vibrate: [100, 50, 100],
+      tag: data.tag,
       data: {
         dateOfArrival: Date.now(),
-        primaryKey: '2',
+        url: data.url || '/',
       },
     }
     event.waitUntil(self.registration.showNotification(data.title, options))
@@ -16,7 +17,18 @@ self.addEventListener('push', function (event) {
 })
 
 self.addEventListener('notificationclick', function (event) {
-  console.log('Notification click received.')
   event.notification.close()
-  event.waitUntil(clients.openWindow('/'))
+  const url = (event.notification.data && event.notification.data.url) || '/'
+  event.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function (windowClients) {
+      // Focus an already open HabitTrove window if there is one
+      for (const client of windowClients) {
+        if ('focus' in client) {
+          client.navigate(url)
+          return client.focus()
+        }
+      }
+      return clients.openWindow(url)
+    })
+  )
 })

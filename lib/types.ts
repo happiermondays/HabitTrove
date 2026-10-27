@@ -53,6 +53,21 @@ export type Habit = {
   pinned?: boolean // mark the habit as pinned
   userIds?: UserId[]
   drawing?: string // Optional JSON string of drawing data
+  reminderTime?: string // Optional daily reminder time "HH:mm" in the system timezone
+}
+
+export type PushSubscriptionRecord = {
+  userId: UserId
+  endpoint: string
+  keys: {
+    p256dh: string
+    auth: string
+  }
+  createdAt: string // UTC ISO date string
+}
+
+export type PushSubscriptionsData = {
+  subscriptions: PushSubscriptionRecord[]
 }
 
 

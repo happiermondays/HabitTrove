@@ -88,7 +88,10 @@
     "shareLabel": "分享",
     "saveChangesButton": "保存更改",
     "addTaskButton": "添加任务",
-    "addHabitButton": "添加习惯"
+    "addHabitButton": "添加习惯",
+    "reminderLabel": "提醒",
+    "reminderDescription": "如果习惯尚未完成，在此时间发送通知",
+    "clearReminder": "清除提醒"
   },
   "ConfirmDialog": {
     "confirmButton": "确认",
@@ -434,8 +437,6 @@
     "invalidAmountDescription": "请输入有效的正数",
     "successTitle": "成功",
     "transactionNotFoundDescription": "未找到交易记录",
-    "maxAmountExceededDescription": "金额不能超过 {max}。",
-    "transactionNotFoundDescription": "未找到交易记录",
     "maxAmountExceededDescription": "金额不能超过 {max}。"
   },
   "DrawingModal": {
@@ -445,5 +446,26 @@
     "clearButton": "清除",
     "saveDrawingButton": "保存绘图",
     "cancelButton": "取消"
+  },
+  "NotificationSettings": {
+    "title": "提醒",
+    "deviceLabel": "此设备上的通知",
+    "unsupportedDescription": "此浏览器不支持推送通知。在 iPhone 上，请先将 HabitTrove 添加到主屏幕。",
+    "deniedDescription": "通知已被阻止。请在浏览器的网站设置中允许通知。",
+    "subscribedDescription": "此设备将接收习惯提醒。",
+    "unsubscribedDescription": "开启后可在此设备上接收习惯提醒。",
+    "enableButton": "开启",
+    "disableButton": "关闭",
+    "testButton": "发送测试",
+    "enabledTitle": "通知已开启",
+    "enabledDescription": "为任意习惯设置提醒时间即可收到通知。",
+    "errorTitle": "错误",
+    "errorDescription": "无法开启通知。",
+    "testTitle": "HabitTrove",
+    "testBody": "通知正常工作！",
+    "testFailedDescription": "无法发送测试通知。"
+  },
+  "Reminders": {
+    "notificationBody": "今天还没有完成 {name}"
   }
 }

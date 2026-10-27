@@ -11,7 +11,7 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
-import { Zap, Brush } from 'lucide-react'
+import { Zap, Brush, X } from 'lucide-react'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { Habit } from '@/lib/types'
 import EmojiPickerButton from './EmojiPickerButton'
@@ -53,6 +53,7 @@ export default function AddEditHabitModal({ onClose, onSave, habit, isTask }: Ad
   const users = usersData.users
   const [drawing, setDrawing] = useState<string>(habit?.drawing || '')
   const [isDrawingModalOpen, setIsDrawingModalOpen] = useState(false)
+  const [reminderTime, setReminderTime] = useState<string>(habit?.reminderTime || '')
 
   function getFrequencyUpdate() {
     if (ruleText === initialRuleText && habit?.frequency) {
@@ -88,7 +89,8 @@ export default function AddEditHabitModal({ onClose, onSave, habit, isTask }: Ad
       completions: habit?.completions || [],
       frequency: getFrequencyUpdate(),
       userIds: selectedUserIds.length > 0 ? selectedUserIds.concat(currentUser?.id || []) : (currentUser && [currentUser.id]),
-      drawing: drawing && drawing !== '[]' ? drawing : undefined
+      drawing: drawing && drawing !== '[]' ? drawing : undefined,
+      reminderTime: !isTask && reminderTime ? reminderTime : undefined
     })
   }
 
@@ -214,6 +216,37 @@ export default function AddEditHabitModal({ onClose, onSave, habit, isTask }: Ad
                   })()}
                 </div>
               </div>
+              {!isTask && (
+                <div className="grid grid-cols-4 items-center gap-4">
+                  <Label htmlFor="reminderTime" className="text-right">
+                    {t('reminderLabel')}
+                  </Label>
+                  <div className="col-span-3 flex items-center gap-2">
+                    <Input
+                      id="reminderTime"
+                      type="time"
+                      value={reminderTime}
+                      onChange={(e) => setReminderTime(e.target.value)}
+                      className="w-32"
+                    />
+                    {reminderTime && (
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="icon"
+                        className="h-8 w-8"
+                        onClick={() => setReminderTime('')}
+                        aria-label={t('clearReminder')}
+                      >
+                        <X className="h-4 w-4" />
+                      </Button>
+                    )}
+                  </div>
+                  <p className="col-start-2 col-span-3 text-sm text-muted-foreground">
+                    {t('reminderDescription')}
+                  </p>
+                </div>
+              )}
               <div className="grid grid-cols-4 items-center gap-4">
                 <div className="flex items-center gap-2 justify-end">
                   <Label htmlFor="targetCompletions">

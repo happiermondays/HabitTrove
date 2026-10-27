@@ -88,7 +88,10 @@
     "shareLabel": "Compartir",
     "saveChangesButton": "Guardar cambios",
     "addTaskButton": "Añadir tarea",
-    "addHabitButton": "Añadir hábito"
+    "addHabitButton": "Añadir hábito",
+    "reminderLabel": "Recordatorio",
+    "reminderDescription": "Recibe una notificación a esta hora si el hábito aún no está hecho",
+    "clearReminder": "Quitar recordatorio"
   },
   "ConfirmDialog": {
     "confirmButton": "Confirmar",
@@ -442,8 +445,27 @@
     "invalidAmountDescription": "Por favor ingresa un número positivo válido",
     "successTitle": "Éxito",
     "transactionNotFoundDescription": "Transacción no encontrada",
-    "maxAmountExceededDescription": "La cantidad no puede exceder {max}.",
-    "transactionNotFoundDescription": "Transacción no encontrada",
     "maxAmountExceededDescription": "La cantidad no puede exceder {max}."
+  },
+  "NotificationSettings": {
+    "title": "Recordatorios",
+    "deviceLabel": "Notificaciones en este dispositivo",
+    "unsupportedDescription": "Este navegador no admite notificaciones push. En iPhone, primero añade HabitTrove a la pantalla de inicio.",
+    "deniedDescription": "Las notificaciones están bloqueadas. Permítelas en la configuración del sitio de tu navegador.",
+    "subscribedDescription": "Este dispositivo recibirá recordatorios de hábitos.",
+    "unsubscribedDescription": "Actívalas para recibir recordatorios de hábitos en este dispositivo.",
+    "enableButton": "Activar",
+    "disableButton": "Desactivar",
+    "testButton": "Enviar prueba",
+    "enabledTitle": "Notificaciones activadas",
+    "enabledDescription": "Configura una hora de recordatorio en cualquier hábito para recibir avisos.",
+    "errorTitle": "Error",
+    "errorDescription": "No se pudieron activar las notificaciones.",
+    "testTitle": "HabitTrove",
+    "testBody": "¡Las notificaciones funcionan!",
+    "testFailedDescription": "No se pudo enviar la notificación de prueba."
+  },
+  "Reminders": {
+    "notificationBody": "{name} aún no está hecho hoy"
   }
 }
