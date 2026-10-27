@@ -149,7 +149,7 @@ export default function HabitItem({ habit, onEdit, onDelete }: HabitItemProps) {
               disabled={!canInteract || habit.archived || (isCompletedToday && completionsToday >= target)}
               className={`overflow-hidden w-24 sm:w-auto ${habit.archived ? 'cursor-not-allowed' : ''}`}
             >
-              <Check className="h-4 w-4 sm:mr-2" />
+              <Check className="h-4 w-4 sm:mr-2 text-green-500" />
               <span>
                 {isCompletedToday ? (
                   target > 1 ? (
